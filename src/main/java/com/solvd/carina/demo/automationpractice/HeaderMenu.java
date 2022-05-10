@@ -1,7 +1,5 @@
 package com.solvd.carina.demo.automationpractice;
 
-import java.util.List;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
@@ -13,10 +11,16 @@ public class HeaderMenu extends AbstractUIObject {
 	private ExtendedWebElement homeLink;
 
 	@FindBy(xpath = "//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a")
-	private ExtendedWebElement accountAccessLink;
+	private ExtendedWebElement myAccountPageLink;
 
 	@FindBy(xpath = "//*[@id=\"contact-link\"]/a")
 	private ExtendedWebElement contactUsLink;
+
+	@FindBy(xpath = "//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a")
+	private ExtendedWebElement singUpButton;
+
+	@FindBy(xpath = "//*[@id=\"header\"]/div[2]/div/div/nav/div[2]/a")
+	private ExtendedWebElement singOutButton;
 
 	@FindBy(xpath = "//*[@id=\"header\"]/div[2]/div/div/nav/span")
 	private ExtendedWebElement shopPhone;
@@ -24,79 +28,41 @@ public class HeaderMenu extends AbstractUIObject {
 	@FindBy(xpath = "//*[@id=\"searchbox\"]")
 	private SearchBox searchBar;
 
+	public SearchBox getSearchBar() {
+		return searchBar;
+	}
+
 	@FindBy(xpath = "//*[@id=\"block_top_menu\"]/div")
 	private ExtendedWebElement categoryDropMenu;
 
-	@FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[1]/a")
-	private ExtendedWebElement womenCategory;
-
-	@FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[1]/ul/li[1]/a")
-	private ExtendedWebElement topsWomenCategory;
-
-	@FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[1]/ul/li[1]/ul/li[1]/a")
-	private ExtendedWebElement tShirtTopsWomenCategory;
-
-	@FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[1]/ul/li[1]/ul/li[2]/a")
-	private ExtendedWebElement dressesWomenCategory;
-
-	@FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[1]/ul/li[2]/ul/li[1]/a")
-	private ExtendedWebElement casualDressesDressesWomenCategory;
-
-	@FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[1]/ul/li[2]/ul/li[2]/a")
-	private ExtendedWebElement eveningDressesDressesWomenCategory;
-
-	@FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[1]/ul/li[2]/ul/li[3]/a")
-	private ExtendedWebElement summerDressesDressesWomenCategory;
-
-	@FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[2]/a")
-	private ExtendedWebElement dressesCategory;
-
-	@FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[2]/ul/li[1]/a")
-	private ExtendedWebElement casualDressesDressesCategory;
-
-	@FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[2]/ul/li[3]/a")
-	private ExtendedWebElement summerDressesDresesCategory;
-
-	@FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[3]/a")
-	private ExtendedWebElement tShirtCategory;
-
-	private enum CatalogCategories {
-		WOMEN, DRESSES, T_SHIRTS;
-	}
-
-	private enum WomenMenuCategories {
-		TOPS, DRESSES;
-	}
-
-	private enum WomenTopsMenu {
-		T_SHIRT, BLOUSES;
-	}
-
-	private enum womenDressesMenu {
-		CASUAL_DRESSES, EVENING_DRESSES, SUMER_DRESSES;
-	}
-
-	public void openProductCategoryPage(CatalogCategories catalogCategories) {
-		// ProductCategoryPage productCategoryPage = new ProductCategoryPage(driver);
-		switch (catalogCategories) {
-		case WOMEN:
-			womenCategory.click();
-		case DRESSES:
-			dressesCategory.click();
-		case T_SHIRTS:
-			tShirtCategory.click();
-
-		}
-	}
+	@FindBy(xpath = "//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a/span[3]")
+	private ExtendedWebElement shoppingCartLink;
 
 	public HeaderMenu(WebDriver driver) {
 		super(driver);
 	}
 
-	public MyAccountPage openMyAccountPage() {
-		accountAccessLink.click();
-		return new MyAccountPage(driver);
+	public ExtendedWebElement getSingUpButton() {
+		return singUpButton;
+	}
 
+	public ExtendedWebElement getSingOutButton() {
+		return singOutButton;
+	}
+
+	public MyAccountPage openMyAccountPage() {
+		myAccountPageLink.click();
+		return new MyAccountPage(driver);
+	}
+
+	public HomePage singOutAccount() {
+		singOutButton.click();
+		return new HomePage(driver);
+	}
+
+	public LoginPage openLoginPage() {
+		singUpButton.click();
+		return new LoginPage(driver);
 	}
 
 	public ContactUsPage openContactUsPage() {
@@ -111,6 +77,11 @@ public class HeaderMenu extends AbstractUIObject {
 	public HomePage openHomePage() {
 		homeLink.click();
 		return new HomePage(driver);
+	}
+
+	public CartPage openOrdersPage() {
+		shoppingCartLink.click();
+		return new CartPage(driver);
 	}
 
 }
