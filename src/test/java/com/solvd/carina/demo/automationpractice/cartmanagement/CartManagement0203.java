@@ -1,5 +1,7 @@
 package com.solvd.carina.demo.automationpractice.cartmanagement;
 
+//TC03-Cart Management-Remove a product from the shopping cart
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;

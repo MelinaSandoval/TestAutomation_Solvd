@@ -1,5 +1,7 @@
 package com.solvd.carina.demo.automationpractice.checkout;
 
+//TC01 - Checkout - Proceed to checkout without being logged in
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;

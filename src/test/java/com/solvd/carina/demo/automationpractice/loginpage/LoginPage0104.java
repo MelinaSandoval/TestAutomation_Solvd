@@ -1,5 +1,7 @@
 package com.solvd.carina.demo.automationpractice.loginpage;
 
+//TC04 - Login Page - Unsuccesfull authentication due to invalid email adress and invalid password
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -16,7 +18,6 @@ public class LoginPage0104 {
 	private WebDriver driver = new ChromeDriver();
 
 	@Test()
-	// Unsuccsessful login due to invalid email and invalid password;
 	public void unsuccessfulLoginAccount() {
 		HomePage homePage = new HomePage(driver);
 		HeaderMenu headerMenu = homePage.getHeaderMenu();

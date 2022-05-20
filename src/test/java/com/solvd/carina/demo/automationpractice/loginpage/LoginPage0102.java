@@ -1,5 +1,9 @@
 package com.solvd.carina.demo.automationpractice.loginpage;
 
+//###############################################################################################################
+//TC02 - Login Page - Unsuccessful Authentication due to valid email adress and wrong password
+//###############################################################################################################
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -17,7 +21,6 @@ public class LoginPage0102 implements IAbstractTest {
 	private WebDriver driver = new ChromeDriver();
 
 	@Test()
-	// Unsuccsessful login due to valid email and wrong password;
 	public void unsuccessfulLoginAccount() {
 		HomePage homePage = new HomePage(driver);
 		HeaderMenu headerMenu = homePage.getHeaderMenu();

@@ -1,5 +1,7 @@
 package com.solvd.carina.demo.automationpractice.cartmanagement;
 
+//TC02 - Cart Management - Add a product displayed on the home page to the cart and proceed to checkout
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;

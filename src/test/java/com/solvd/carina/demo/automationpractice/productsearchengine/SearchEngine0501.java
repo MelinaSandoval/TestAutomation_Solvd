@@ -1,5 +1,7 @@
 package com.solvd.carina.demo.automationpractice.productsearchengine;
 
+//TC01 - Products Search Engine - Searching for an existen product by keyword
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
