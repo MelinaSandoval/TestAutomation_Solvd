@@ -1,5 +1,7 @@
 package com.solvd.carina.demo.automationpractice.loginpage;
 
+//TC06-Login Page-Succesfull registration using valid email adress
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;

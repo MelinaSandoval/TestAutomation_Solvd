@@ -1,5 +1,7 @@
 package com.solvd.carina.demo.automationpractice.loginpage;
 
+//TC05 - Login Page - Unseccesfull authentication due to null inpunt in email and password fields
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -16,7 +18,6 @@ public class LoginPage0105 {
 	private WebDriver driver = new ChromeDriver();
 
 	@Test()
-	// Unsuccsessful login due to null email and null password;
 	public void unsuccessfulLoginAccount() {
 		HomePage homePage = new HomePage(driver);
 		HeaderMenu headerMenu = homePage.getHeaderMenu();

@@ -1,5 +1,7 @@
 package com.solvd.carina.demo.automationpractice.loginpage;
 
+//TC07 - Login Page - Unseccesfull registration using invalid email
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
