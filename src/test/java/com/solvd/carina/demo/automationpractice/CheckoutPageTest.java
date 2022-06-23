@@ -11,7 +11,7 @@ public class CheckoutPageTest {
     private String userPassword = "testaccount1";
     private CartPage cartPage;
 
-    @Test(description = "Test Case 01 - Search Engine: The user tries to add a product from the home page to the cart")
+    @Test(description = "Test Case 01 - The user goes to the checkout page without logged")
     @MethodOwner(owner = "Melina_Sandoval")
     public void proceedToCheckoutBeingLogged() {
         HomePage homePage = new HomePage(getDriver());
